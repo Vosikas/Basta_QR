@@ -284,7 +284,7 @@ export default function App() {
       >
         <p className="footer-text">{content.footerTitle}</p>
         <motion.a 
-          href="https://maps.google.com" 
+          href="https://maps.app.goo.gl/C4djACz2sWRsXZF69" 
           className="red-button"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
@@ -294,7 +294,7 @@ export default function App() {
 
         <div className="footer-phone">
           <p>Takeaway</p>
-          <a href="tel:+302101234567">210 123 4567</a>
+          <a href="tel:+302102440404">21 0244 0404</a>
         </div>
       </motion.footer>
     </div>
