@@ -1,0 +1,302 @@
+:root {
+  --bg-color: #FDF6E3;
+  --text-main: #2b1d18;
+  --basta-red: #c8102e;
+  --spaghetti: #e8a333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.main-wrapper { 
+  max-width: 480px; 
+  margin: 0 auto; 
+  background: var(--bg-color); 
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Hero */
+.hero-section { 
+  position: relative; 
+  width: 100%; 
+  height: 55vh; 
+  background: #000;
+  border-bottom-left-radius: 40px; 
+  border-bottom-right-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+.hero-logo { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  opacity: 0.9;
+}
+.hero-overlay { 
+  position: absolute; 
+  bottom: 0; 
+  width: 100%; 
+  height: 50%; 
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); 
+}
+
+/* Language Switcher */
+.language-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 30px;
+  padding: 4px;
+  z-index: 100;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.language-switcher button {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  filter: grayscale(100%) opacity(0.5);
+  line-height: 1;
+}
+.language-switcher button.active {
+  background: white;
+  filter: grayscale(0%) opacity(1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Pizza Section */
+.pizza-section {
+  padding: 40px 20px;
+  background: var(--bg-color);
+  text-align: center;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--basta-red);
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+.pizza-container {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 30px;
+  aspect-ratio: 1;
+}
+.pizza-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible; /* to allow slice pulling out */
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
+}
+
+.pizza-info-container {
+  min-height: 250px; 
+  max-width: 350px;
+  margin: 0 auto;
+}
+.pizza-info-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+.pizza-info-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.pizza-info-text {
+  padding: 20px;
+  text-align: left;
+}
+.pizza-info-text h4 {
+  margin: 0 0 8px 0;
+  color: var(--basta-red);
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+.pizza-info-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Removed dashed prompt, using default card now */
+.pizza-info-card.default-card {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+}
+
+/* Menu Tabs */
+.tabs-container {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 8px;
+  border-radius: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 10px;
+}
+.tab-button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 12px 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #777;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+.tab-button.active {
+  background: var(--basta-red);
+  color: white;
+  box-shadow: 0 4px 10px rgba(200, 16, 46, 0.2);
+}
+
+/* Menu */
+.menu-section { 
+  padding: 20px 20px 40px; 
+  position: relative;
+  z-index: 2;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.menu-card-wrapper {
+  overflow: hidden;
+}
+.menu-card { 
+  background: white;
+  border-radius: 24px;
+  padding: 30px 25px; 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+.menu-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  border-bottom: 2px dashed #f0f0f0;
+  padding-bottom: 15px;
+}
+.menu-card-header h3 { 
+  font-size: 1.8rem; 
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin: 0; 
+  color: var(--basta-red);
+}
+.menu-icon {
+  font-size: 2rem;
+}
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.menu-item-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+.menu-item-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111;
+}
+.menu-item-price {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--basta-red);
+}
+.menu-item-desc {
+  font-size: 0.9rem;
+  color: #777;
+  line-height: 1.4;
+}
+
+/* Footer */
+.footer-section { 
+  position: relative;
+  padding: 60px 30px 60px; 
+  text-align: center; 
+  background: var(--text-main);
+  color: white;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: 30px;
+  border-top: 6px solid var(--basta-red);
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.08);
+}
+.footer-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+.red-button { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+  background: var(--basta-red); 
+  color: #fff; 
+  padding: 20px; 
+  font-weight: 800; 
+  font-size: 1.1rem;
+  text-decoration: none; 
+  border-radius: 16px; 
+  box-shadow: 0 10px 20px rgba(200, 16, 46, 0.3);
+}
+
+.footer-phone {
+  margin-top: 35px;
+}
+.footer-phone p {
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  color: #888;
+}
+.footer-phone a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+.footer-phone a:hover {
+  color: white;
+}
